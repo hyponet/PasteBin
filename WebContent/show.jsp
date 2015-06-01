@@ -4,8 +4,8 @@
     pageEncoding="UTF-8" errorPage="error.jsp"%>
     <%
     	long id = Long.parseLong(request.getParameter("id"));
-    	//Code code = (Code)session.getAttribute("" + id);
-    	Code code = null;
+    	Code code = (Code)session.getAttribute("" + id);
+    	//Code code = null;
     	if(code == null){
     		code = CodeDrive.getCode(id);
     		session.setAttribute("" + id, code);
