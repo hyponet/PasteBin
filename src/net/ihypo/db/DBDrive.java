@@ -11,7 +11,7 @@ public class DBDrive {
 	private String psw = "123";
 	
 	public DBDrive() throws SQLException, ClassNotFoundException {
-		Class.forName("com.sql.jdbc.Driver");
+		Class.forName("com.mysql.jdbc.Driver");
 		connection = DriverManager.getConnection(url,user,psw);
 	}
 	

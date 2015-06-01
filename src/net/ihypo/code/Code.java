@@ -1,10 +1,13 @@
 package net.ihypo.code;
 
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
+import net.ihypo.db.CodeDrive;
+
 public class Code {
-	private int id;
+	private long id;
 	private String name;
 	private String title;
 	private String lang;
@@ -22,8 +25,8 @@ public class Code {
 		return content.toString();
 	}
 	
-	public Code(String name,String title,String lang,String content){
-		this.id = 1;
+	public Code(String name,String title,String lang,String content) throws ClassNotFoundException, SQLException{
+		this.id = CodeDrive.getNextId();
 		this.name = clear(new StringBuffer(name));
 		this.title = clear(new StringBuffer(title));
 		this.lang = lang;
@@ -32,12 +35,11 @@ public class Code {
 		time = new Timestamp(calendar.getTimeInMillis());
 	}
 	
-	public static Code getCode(long id){
-		
-		return null;
+	public void setId(long id){
+		this.id = id;
 	}
 	
-	public int getId(){
+	public long getId(){
 		return id;
 	}
 	
@@ -53,8 +55,12 @@ public class Code {
 		return lang;
 	}
 	
+	public void setTime(Timestamp time) {
+		this.time = time;
+	}
+	
 	public String getTime(){
-		return time.toString();
+		return time.toLocaleString();
 	}
 	
 	public Timestamp getTimestamp(){

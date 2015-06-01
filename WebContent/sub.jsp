@@ -9,7 +9,7 @@
 	String title = new String(request.getParameter("title").getBytes("ISO-8859-1"),"UTF-8");
 	String con = new String(request.getParameter("content").getBytes("ISO-8859-1"),"UTF-8");
 	Code code = new Code(poster,title,lang,con);
-	CodeDrive.addCode(code);
+	CodeDrive.addCode(code); 
 	session.setAttribute("" + code.getId(), code);
 %>
 <script type="text/javascript">

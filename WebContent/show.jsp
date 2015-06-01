@@ -1,11 +1,13 @@
+<%@page import="net.ihypo.db.CodeDrive"%>
 <%@page import="net.ihypo.code.Code"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" errorPage="error.jsp"%>
     <%
     	long id = Long.parseLong(request.getParameter("id"));
-    	Code code = (Code)session.getAttribute("" + id);
+    	//Code code = (Code)session.getAttribute("" + id);
+    	Code code = null;
     	if(code == null){
-    		code = Code.getCode(id);
+    		code = CodeDrive.getCode(id);
     		session.setAttribute("" + id, code);
     	}
     %>
