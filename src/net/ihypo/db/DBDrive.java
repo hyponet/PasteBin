@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBDrive {
 	private Connection connection;
-	private String url = "jdbc:mysql://localhost/pastebin";
+	private String url = "jdbc:mysql://localhost/code";
 	private String user = "root";
 	private String psw = "123";
 	

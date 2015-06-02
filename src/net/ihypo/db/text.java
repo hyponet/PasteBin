@@ -9,7 +9,7 @@ import net.ihypo.code.Code;
 
 public class text {
 public static void main(String[] args) throws ClassNotFoundException, SQLException {
-	Code code = CodeDrive.getCode(1);
-	System.out.println(code.getTime());
+	Code code = new Code("张三", "题目", "C++", "内容");
+	CodeDrive.addCode(code);
 }
 }
